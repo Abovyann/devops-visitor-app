@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: . #dockerfile usage in this directory
+    ports:
+      - "8080:5000" #maps port 8080 to container port 5000
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis:alpine" #pulls redis image from DockerHub
+    ports:
+      - "6379:6379"
