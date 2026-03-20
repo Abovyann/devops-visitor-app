@@ -1,6 +1,6 @@
 services:
   web:
-    image: abovyann/devops-visitor-app:latest
+    image: nar001/devops-visitor-app:latest
     environment:
       - REDIS_HOST=redis
     depends_on:
