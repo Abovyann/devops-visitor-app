@@ -48,6 +48,14 @@ resource "aws_route_table_association" "public_rta" {
 
 # Create a Security Group
 resource "aws_security_group" "web_sg" {
+  ingress {
+    description = "Allow HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   name        = "web_sg"
   description = "Allow SSH and HTTP traffic"
   vpc_id      = aws_vpc.main_vpc.id
