@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    image: your-username/devops-visitor-app:latest
+    image: Abovyann/devops-visitor-app:latest
     environment:
       - REDIS_HOST=redis
     depends_on:
