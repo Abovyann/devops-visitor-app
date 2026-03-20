@@ -54,7 +54,9 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ubuntu
           key: ${{ secrets.SERVER_SSH_KEY }}
-          source: "docker-compose.yml,nginx"
+          source: | 
+            docker-compose.yml 
+            nginx/default.conf
           target: "~/app"
 
       # Step 4: Run the containers
